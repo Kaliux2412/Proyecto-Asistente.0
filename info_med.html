@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="diseño.css">
+    <link rel="shortcut icon" href="Img/icono.png">
+</head>
+<body class="cuest">
+    <div class="main">
+        <header class="head_cues">
+            <nav class="menu">
+                <div class="caja-logo">
+                    <img src="Img/Logo.png" class="logo">
+                    <p>MED-ASSIS</p>
+                </div>
+                <div class="menucuest">
+                    <ul>
+                        <a href="#">INICIO</a>
+                        <i class="fi fi-br-angle-down"></i>
+                        <a href="#">TU SALUD</a>
+                        <a href="#">ASISTENTE</a>
+                        <a href="cuenta.html">CUENTA</a>
+                    </ul>
+                </div>
+            </nav>
+        </header>   
+        <div class="contenedor-quiz">
+            <section class="quiz-section">
+                <div class="quiz-box">
+                    <h1>Med-Assis Quiz</h1>
+                    <div class="quiz-header">
+                        <span>Quiz para tu Cuidado</span>
+                        <span class="header-score"></span>
+                    </div>
+                    <h2 class="question-text">¿Cuál fue la primera enfermedad erradicada gracias a las vacunas?</h2>
+                    <div class="option-list">
+                        <!-- <div class="option">
+                            <span>La viruela</span>
+                        </div>
+                        <div class="option">
+                            <span>La cólera</span>
+                        </div>
+                        <div class="option">
+                            <span>El sarampión</span>
+                        </div>
+                        <div class="option">
+                            <span>La fiebre</span>
+                        </div> -->
+                    </div>
+                    <div class="quiz-footer">
+                        <span class="question-total"></span>
+                        <button class="next-btn">Siguiente</button>
+                    </div>
+                </div>
+                <div class="result-box">
+                    <h2>¡Puntuación!</h2>
+                    <div class="contenedor-porcentaje">
+                        <div class="circular-progress">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <span class="score-text">Tu resultado es 0 de 6</span>
+                    </div>
+                    <div class="quiz-botones">
+                        <a href="m_principal.html"><button class="guarBtn">Guardar y Salir</button></a>
+                    </div>
+                </div>
+            </section>
+            <section class="home">
+                <div class="preguntas">
+                    <h1>Quiz Medico</h1>
+                    <p>Para que tengas una mejor experiencia te recomendamos hacer este quiz. </p>
+                    <button class="start-btn">Start Quiz</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="popup-info">
+        <h2>Guia del Quiz</h2>
+        <span class="info">1. El quiz te ayudara a saber que tanto conoces de tu salud.</span>
+        <span class="info">2. Serán 6 preguntas, las cuales debes contestar honestamente.</span>
+        <span class="info">3. Al finalizar el quiz, podrás ver tu resultado.</span>
+        <span class="info">4. Esto se guardará en tu cuenta para que te motives a aprender cada día más.</span>
+        <div class="btn-group">
+            <a href="#popup-info"><button class="info-btn exit-btn">Salir del Quiz</button></a>
+            <a href="#" class="info-btn continue-btn">Continuar</a>
+        </div>        
+    
+    </div>
+    <section class="modal_tipovida">
+        
+    </section>
+    <script src="funciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
