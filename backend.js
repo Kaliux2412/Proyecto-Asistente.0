@@ -55,6 +55,19 @@ app.get('/login', (req, res)=>{
     res.json(user_name)
     console.log(user_name)
 })
+app.get('/:tipovida', (req,res)=>{
+    let tipovida = req.params.tipovida
+    if(tipovida == "Vida1"){
+        res.json({infovid: "Mi vida es muy activa"})
+    }
+    if(tipovida == "Vida2"){
+        res.json({infovid: "Tengo mucho trabajo y casi no descanso"})
+    }
+    if(tipovida == "Vida3"){
+        res.json({infovid: "Mi vida es muy relajada y no soy muy activ@"})
+    }
+    console.log(tipovida)
+})
 app.listen(port, ()=>{
     console.log(`El puerto esta listo ${port}`)
 })
