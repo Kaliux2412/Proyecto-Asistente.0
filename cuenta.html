@@ -5,16 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu cuenta</title>
+    <link rel="stylesheet" href="diseño.css">
 </head>
-<body>
-    <h1>TU CUENTA</h1>
-    <div id="caja_nombreu">
+<body class="p">
+    <script src="funciones.js"></script>
+    <header class="head_ini">
+        <nav class="menu">
+            <div class="caja-logo">
+                <img src="Img/Logo.png" class="logo">
+                <p>MED-ASSIS</p>
+            </div>
+            <div class="menu-container">
+                <ul>
+                    <a href="m_principal.html">INICIO</a>
+                    <i class="fi fi-br-angle-down"></i>
+                    <a href="salud.html">TU SALUD</a>
+                    <a href="#">ASISTENTE</a>
+                    <a href="cuenta.html">CUENTA</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div style="background-color: black; height: 70px;"></div>  
+    <h1 style="color: white;">TU CUENTA</h1>
+    <div style="color: white" id="caja_nombreu">
 
     </div>
-    <div id="info_tipovida"></div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="quiz.js"></script>
-    <script src="funciones.js"></script>
+    <div id="info_tipovida">
+
+    </div>
+    <div class="calorias">
+        <div class="barraeje">
+            <div class="ejeconsumidas"></div>
+        </div>
+        <div class="barracomida">
+            <div class="comiconsumidas"></div>
+
+        </div>
+    </div>
+    <div>
+        <p style="color: white;">Si no hiciste el quiz medico al registrarte haz click para completarlo</p>
+        <a href="info_med.html" style="color: white;">QUIZ!</a>
+    </div>
 
 </body>
 </html>

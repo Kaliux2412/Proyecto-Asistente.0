@@ -7,9 +7,35 @@ const app = express()
 app.use(cors())
 const port = 3001
 
+// Apartado de pg
+const { Client } = require('pg')
+
+const obtenerDatos = async () => {
+    const client = new Client({
+        user: 'postgres',
+        host: 'localhost',
+        database: 'postgres',
+        password: 'Prueba12',
+        port: 5432,
+    })
+    
+    await client.connect()
+ 
+    const res = await client.query('SELECT * FROM "ProyectoAsistente".tablaejercicios')
+    const result = res.rows
+    await client.end()
+    return result
+};
+
+obtenerDatos().then((result) => {
+    console.log(result)
+    app.get('/ejercicios',(req,res) => {
+        res.json(result)
+    })
+})
+
+// Apartado de usuarios y codigo node
 let email = ''
-let password = ''
-let emails_almacenados = []
 let usuarios_almacenados = []
 
 app.get('/login/:email/:pass',(req,res)=>{
@@ -55,18 +81,31 @@ app.get('/login', (req, res)=>{
     res.json(user_name)
     console.log(user_name)
 })
-app.get('/:tipovida', (req,res)=>{
-    let tipovida = req.params.tipovida
-    if(tipovida == "Vida1"){
-        res.json({infovid: "Mi vida es muy activa"})
+let tipovida = ''
+app.get('/tipovida/:seleccion', (req,res)=>{
+    tipovida = req.params.seleccion
+    if(tipovida == "activa"){
+        res.json({infovid: "Mi vida es muy activa", tipovida})
+        console.log("Escogiste una vida activa")
     }
-    if(tipovida == "Vida2"){
-        res.json({infovid: "Tengo mucho trabajo y casi no descanso"})
+    if(tipovida == "estresante"){
+        res.json({infovid: "Tengo mucho trabajo y casi no descanso", tipovida})
+        console.log("Tu vida es estresante")
     }
-    if(tipovida == "Vida3"){
-        res.json({infovid: "Mi vida es muy relajada y no soy muy activ@"})
+    if(tipovida == "tranquila"){
+        res.json({infovid: "Mi vida es muy relajada y no soy muy activ@", tipovida})
+        console.log("Hay tranquilidad en tu vida y flojera")
     }
+})
+app.get('/tipovida',(req, res) =>{
+    res.json(tipovida)
     console.log(tipovida)
+})
+
+app.get('/guardar/:caloriaseje', (req,res) =>{
+    let calorias = req.params.caloriaseje
+    res.json(calorias)
+    console.log(calorias)
 })
 app.listen(port, ()=>{
     console.log(`El puerto esta listo ${port}`)

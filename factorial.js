@@ -21,3 +21,14 @@ function pqep(n){
         }
     }
 }
+
+
+
+function palindromo(palabra){
+    let separar = palabra.split('')
+    console.log(separar)
+    for(let n = 0; n < palabra.length; n++){
+        console.log(separar[n])
+    }
+}
+palindromo('radar')
