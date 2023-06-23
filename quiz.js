@@ -1,4 +1,47 @@
 //  Seccion de tipo de vida y edad del usuario
+(async () => {
+    const {value: vida} = await Swal.fire({
+        title: "Continuemos!",
+        icon: 'question',
+        text: "Registra los siguientes datos",
+        backdrop: true,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        stopKeydownPropagation: false,
+        // input: "select",
+        // inputValue: '',
+        // inputPlaceholder: "Edad",
+        input: "select",
+        inputPlaceholder: "¿Qué tipo de vida tienes?",
+        inputValue: '',
+        inputOptions:{
+            Vida1: "Mi vida es muy activa",
+            Vida2: "Tengo mucho trabajo y casi no descanso",
+            Vida3: "Mi vida es muy relajada y no soy muy activ@"
+        },
+        footer: '<span class="importante">Contestar estas preguntas es muy importante</span>',
+    });
+
+    if(vida){
+        console.log(vida)
+    }
+    function tipoVida(){
+        fetch("http://localhost:3001/"+ vida)
+        .then(info => info.json())
+        .then(info =>{
+            console.log(info)
+            let caja_vida = document.getElementById("info_tipovida")
+            let vida = document.createElement("h2")
+            vida.innerHTML = `Tu tipo de vida es ${info.infovid}`
+            caja_vida.appendChild(vida)
+            
+        })
+    }
+    tipoVida()
+})()
+
+
 const startBtn = document.querySelector(".start-btn")
 const popupInfo = document.querySelector(".popup-info")
 const exitBtn = document.querySelector(".exit-btn")

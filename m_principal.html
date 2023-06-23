@@ -19,9 +19,9 @@
             </div>
             <div class="menu-container">
                 <ul>
-                    <a href="m_principal.html">INICIO</a>
+                    <a href="#">INICIO</a>
                     <i class="fi fi-br-angle-down"></i>
-                    <a href="salud.html">TU SALUD</a>
+                    <a href="#">TU SALUD</a>
                     <a href="#">ASISTENTE</a>
                     <a href="cuenta.html">CUENTA</a>
                 </ul>
@@ -110,9 +110,8 @@
 
     <div class="inicio_container">
         <div class="espacio">
-            <h1>Sobre la pagina</h1>
-            <p class="pdeinicio">Bienvenido a Med-assis una pagina que te ayudara a tener control y conocimiento sobre tu salud. Esta página estará dividida en secciones que podrás personalizar y adaptarcomo se te antoje.</p>
-            <p class="pdeinicio borde">En la parte inferior debes escoger la opción que más se adapte a ti, para que el apartado de "Tu Salud" sea mejor para ti.</p>
+            <p class="pdeinicio">Bienvenido a Med-assis una pagina que te ayudara a tener control y conocimiento sobre tu salud.</p>
+            <p class="justi">Esta página estará dividida en secciones que podrás personalizar y adaptarla a ti como se te antoje</p>
         </div>
     </div>
 
@@ -122,31 +121,5 @@
             header.classList.toggle("abajo",window.scrollY>0)
         })
     </script>
-    <h1 class="tip">¿Qué tipo de vida tienes?</h1>
-    <div class="tipo_vida">
-        <div class="tablas_vid"id="act">
-            <img src="Img/activa.jpg" class="img_vid">
-            <h2>Es muy activa</h2>
-            <p>Te fascina hacer ejercicio o practica un deporte, puedes hasta incluso considerarte una persona hiperactiva, no soportas la idea de parar de hacerlo.</p>
-            <p>Esta opción te motivará a seguir así y a tener registros y organización para ver tus resultados.</p>
-            <button onclick="activa()" class="eleccionvid elec1">Seleccionar</button>
-        </div>
-        <div class="tablas_vid" id="tranqui">
-            <img src="Img/tranqui.jpg" class="img_vid">
-            <h2>Muy tranquila</h2>
-            <p>Sueles ver demasiadas series y peliculas o estar durmiendo. Tienes una vida muy tranquila y norlmamente te da flojera hacer actividades fisícas.</p>
-            <p>Entonces esta opción es par tí, vamos a cambiar un poco esa rutina y agragarle más motivación.</p>
-            <button onclick="activa()" class="eleccionvid elec2">Seleccionar</button>
-        </div>
-        <div class="tablas_vid" id="estre">
-            <img src="Img/estre.jpg" class="img_vid">
-            <h2>Es estresanste!!</h2>
-            <p>La mayoría del tiempo te la pasas trabajando y no puedes hacer las cosas que te gustan o simplemente descansar</p>
-            <p>Escoge esta opción para terminar con ese ciclo sin fin</p>
-            <button onclick="activa()" class="eleccionvid elec3">Seleccionar</button>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 </html>
