@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu cuenta</title>
+    <link rel="stylesheet" href="http://localhost/diseño.css">
+</head>
+<body class="p">
+    <script src="http://localhost/funciones.js"></script>
+    <header class="head_ini">
+        <nav class="menu">
+            <div class="caja-logo">
+                <img src="http://localhost/Img/Logo.png" class="logo">
+                <p>MED-ASSIS</p>
+            </div>
+            <div class="menu-container">
+                <ul>
+                    <a href="http://localhost/m_principal.html">INICIO</a>
+                    <i class="fi fi-br-angle-down"></i>
+                    <a href="http://localhost/salud.html">TU SALUD</a>
+                    <a href="#">ASISTENTE</a>
+                    <a href="http://localhost:3001/usuario/cuenta">CUENTA</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div style="background-color: black; height: 70px;"></div>  
+    <div class="apa1">
+        <h1>ESTA ES TU CUENTA</h1>
+        <p style="color: white; font-size: 20px;font-family: 'Times New Roman', Times, serif;"> Nombre: <%= user %></p>
+        <img src="http://localhost/Img/perfil.jpg">
+    </div>
+    <div class="titulosc">
+        <h2>EMAIL</h2>
+        <h2>RESULTADO DEL QUIZ</h2>
+        <h2>TIPO DE VIDA</h2>
+    </div>
+    <div class="apa2">
+        <p style="color: white; font-size: 20px;"> Tu email: <%= useremail %></p>
+        <div id='puntaje'>
+            <div id="estrellas" class="estrellas">
+
+            </div>
+            <p style="color: white; " id="resumed"></p>
+        </div>
+        <p style="color: white; font-size: 20px;" id="regretipov"></p>
+    </div>
+    <div class="calorias">
+        <h2 style="color: white;">Registro de calorias eliminadas y consumidas</h2>
+        <div class="infoeje">
+            <div class="barraeje">
+                <div class="ejeconsumidas" id="ejeconsumidas"></div>
+            </div>
+            <span id="elical"></span>
+        </div>
+        <div class="infocomi">
+            <div class="barracomida">
+                <div class="comiconsumidas" id="comiconsumidas"></div>
+            </div>
+            <span id="totalcal"></span>
+        </div>
+
+
+    </div>
+    <div style="text-align: center; align-items: center; font-size: 25px; font-family: race; letter-spacing: 5px;">
+        <p style="color: white;">Si no hiciste el quiz medico al registrarte haz click para completarlo</p>
+        <button class="btnquiz"><a href="http://localhost/info_med.html" style="color: white;">QUIZ!</a></button>
+    </div>
+
+</body>
+</html>
+charArt(0).toupperCase() + user.slice(1)

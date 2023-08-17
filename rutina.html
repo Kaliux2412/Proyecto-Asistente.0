@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina Principal</title>
+    <link rel="stylesheet" href="diseño.css">
+</head>
+<body id="ejercicios" >
+    <script src="funciones.js"></script>
+    <div id="rutina"></div>
+    <audio id="audio" preload="auto" tabindex="0" controls="" >
+        <source src="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/01%20-%20Crusader%20Prelude.mp3">
+    </audio>
+    <ul id="playlist">
+        <li class="active">
+           <a href="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/01%20-%20Crusader%20Prelude.mp3">
+           </a>
+        </li>
+        <li>
+            <a href="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/03%20-%20Little%20Bit%20Of%20What%20You%20Fancy.mp3">
+            </a>
+        </li>
+        <li>
+            <a href="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/04%20-%20Sailing%20To%20America.mp3">
+            </a>
+        </li>
+        <li>
+            <a href="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/05%20-%20Set%20Me%20Free.mp3">
+            </a>
+        </li>
+        <li>
+            <a href="https://s3-us-west-2.amazonaws.com/allmetalmixtapes/Saxon%20-%201984%20-%20Crusader/06%20-%20Just%20Let%20Me%20Rock.mp3">
+            </a>
+        </li>
+    </ul>
+    <script>
+        init();
+
+        function init(){
+            var audio = document.getElementById('audio');
+            var playlist = document.getElementById('playlist');
+            var tracks = playlist.getElementsByTagName('a');
+            audio.volume = 1;
+            audio.play();
+            
+            //Agregamos los eventos a los links que nos permitirán cambiar de canción
+            for(var track in tracks) {
+            var link = tracks[track];
+            if(typeof link === "function" || typeof link === "number") continue;
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var song = this.getAttribute('href');
+                run(song, audio, this);
+            });
+            }
+            //agregamos evento para reproducir la siguiente canción en la lista
+            //si la canción es la ultima reproducir la primera otra vez
+            audio.addEventListener('ended',function(e) {
+                for(var track in tracks) {
+                var link = tracks[track];
+                var nextTrack = parseInt(track) + 1;
+                if(typeof link === "function" || typeof link === "number") continue;
+                if(!this.src) this.src = tracks[0];
+                if(track == (tracks.length - 1)) nextTrack = 0;
+                                            console.log(nextTrack);
+                    if(link.getAttribute('href') === this.src) {
+                    var nextLink = tracks[nextTrack];
+                    run(nextLink.getAttribute('href'), audio, nextLink);
+                    break;
+                }
+                }
+            });
+        }
+
+        function run(song, audio, link){
+                var parent = link.parentElement;
+                //quitar el active de todos los elementos de la lista
+                var items = parent.parentElement.getElementsByTagName('li');
+                for(var item in items) {
+                if(items[item].classList)
+                    items[item].classList.remove("active");
+                }
+                
+                //agregar active a este elemento
+                parent.classList.add("active");
+                
+                //tocar la cancion
+                audio.src = song;
+                audio.load();
+                audio.play();
+        }
+    </script>  
+</body>
+</html>
+            <!-- <form action="/usuario/login" method="post">
+                <div class="loginusu" id="loginusu">
+                    <a href="/m_principal.html" class="icon-close"><span class="icon-close" id="icon-close"><ion-icon name="close-outline"></ion-icon></span></a>
+                    <img src="/Img/ini.png" class="imgu">
+                    <p class="sesion">HOLA <%= user %></p>
+                    <div class="login">
+                        <p class="use">USER</p>
+                        <p class="log">LOGIN</p>
+                    </div>
+                    <div class="boton_ini1">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="email" required class="boton" placeholder="Email" id="email" >
+                    </div>
+                    <div class="boton_ini">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" required class="boton" placeholder="Password" id="password">
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Recordarmela</label><a href="#">Olvidaste tu contraseña?</a>
+                    </div>
+                    <div>
+                        <input type="submit" class="sign">
+                        <button type="submit" class="sign" id="sign" onclick="Login()">Login</button></a>
+                    </div>
+                    <div class="login-register">
+                        <a href="/usuario/registro">Registrate</a>
+                        <p>No tienes una cuenta?<a href="#" class="register-link">Registrate</a></p>
+                    </div>
+                </div>
+            </form> -->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="http://localhost/Img/icono.png">
+    <link rel="stylesheet" href="http://localhost/diseño.css">
+
+</head>
+<body class="i">
+    <script src="http://localhost/funciones.js"></script>
+    <div class="diagonal">
+        <div class="img_bien">
+            <h1 class="contenido" id="h1">DA TU SIGUINTE PASO</h1>
+            <h1 class="contenido">Registrate o accede a tu cuenta para continuar</h1>
+        </div>
+    </div>
+    <div class="diag"></div>
+    <div class="diag2"></div>
+        <div class="wrapper">
+            <form action="http://localhost:3001/usuario/login" method="post">
+                <div class="loginusu" id="loginusu">
+                    <a href="http://localhost/m_principal.html" class="icon-close"><span class="icon-close" id="icon-close"><ion-icon name="close-outline"></ion-icon></span></a>
+                    <img src="http://localhost/Img/ini.png" class="imgu">
+                    <p class="sesion">HOLA QUERIDO USUARIO !</p>
+                    <div class="login">
+                        <p class="use">USER</p>
+                        <p class="log">LOGIN</p>
+                    </div>
+                    <div class="boton_ini1">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="email" required class="boton" placeholder="Email" id="email" name="email" >
+                    </div>
+                    <div class="boton_ini">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" required class="boton" placeholder="Password" id="password" name="password">
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Recordarmela</label><a href="#">Olvidaste tu contraseña?</a>
+                    </div>
+                    <div>
+                        <input type="submit" class="sign">
+                        <ul class="alerts">
+                            <% if(messages.success_msg){ %>
+                                <li><%= messages.success_msg %></li>
+                                <% } %>
+                        </ul>
+                        <ul class="alerts">
+                            <% if(typeof errors != 'undefined'){ %> <% errors.forEach(error =>{ %>
+                            <li><%=error.mensaje%></li>
+                            <% }) %> <% } %> 
+                        </ul>
+                    </div>
+                    <div class="login-register">
+                        <p>No tienes una cuenta?<a href="http://localhost:3001/usuario/registro" class="register-link">Registrate</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>   

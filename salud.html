@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Salud</title>
+    <link rel="stylesheet" href="diseño.css">
+    <link rel="shortcut icon" href="Img/icono.png">
+</head>
+<body id="ejercicios">
+    <script src="http://localhost/funciones.js"></script>
+    <header class="head_ini">
+        <nav class="menu">
+            <div class="caja-logo">
+                <img src="Img/Logo.png" class="logo">
+                <p>MED-ASSIS</p>
+            </div>
+            <div class="menu-container">
+                <ul>
+                    <a href="m_principal.html">INICIO</a>
+                    <i class="fi fi-br-angle-down"></i>
+                    <a href="salud.html">TU SALUD</a>
+                    <a href="#">ASISTENTE</a>
+                    <a href="http://localhost:3001/usuario/cuenta">CUENTA</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div style="height: 60px;"></div>
+    <div id="seleccion_vida">
+        <p id="exp"></p>
+    </div>
+    <div id="contenido_salud">
+        <nav class="apartados">
+            <ul>
+                <button id="btnrut" class="btnContenido rutina" onclick="crearContenido()">Rutinas</a></button>
+                <button id="btndietas" class="btnContenido dieta" onclick="crearContenido()">Dietas</button>
+
+            </ul>
+        </nav>
+        <div class="rutinas" id="rutinas">
+
+        </div>
+        <div class="dietas" id="dietas"></div>
+    </div>
+    
+    
+</body>
+</html>

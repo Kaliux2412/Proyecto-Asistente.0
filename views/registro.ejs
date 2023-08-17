@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="shortcut icon" href="http://localhost/Img/icono.png">
+    <link rel="stylesheet" href="http://localhost/diseño.css">
+</head>
+<body class="i">
+    <script src="http://localhost/funciones.js"></script>
+    <div class="diagonal">
+        <div class="img_bien">
+            <h1 class="contenido" id="h1">DA TU SIGUINTE PASO</h1>
+            <h1 class="contenido">Registrate o accede a tu cuenta para continuar</h1>
+
+        </div>
+    </div>
+    <div class="diag"></div>
+    <div class="diag2"></div>
+        <div class="wrapper">
+            <form action="http://localhost:3001/usuario/registro" method="post">
+                <div class="registro" id="registro">
+                    <a href="http://localhost/m_principal.html" class="icon-close"><span class="icon-close1" id="icon-close"><ion-icon name="close-outline"></ion-icon></span></a>
+                    <img src="http://localhost/Img/registro.png" class="imgu2">
+
+                    <div class="login2">
+                        <p class="use">USER</p>
+                        <p class="log">SIGN-IN</p>
+                    </div>
+
+                    <div class="boton_ini1">
+                        <span class="icon2"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required class="boton" placeholder="Username" id="nombre" name="nombre">
+                    </div>
+                    <div class="boton_ini0">
+                        <span class="icon2"><ion-icon name="mail-outline"></ion-icon></span>
+                        <input type="email" required class="boton" placeholder="Email" id="email" name="email">
+                    </div>
+                    <div class="boton_inip">
+                        <span class="icon2"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" required class="boton" placeholder="Password" id="pass" name="password">
+                    </div>
+                    <div class="remember-forgot1">
+                        <label id="ter"><input type="checkbox" id="condi">Estoy deacuerdo con los terminos y condiciones</label>
+                    </div>
+                    <div id="signdiv">
+                        <a href="/info_med.html"><input type="submit" class="sign" ></a>
+                        <!-- <button onclick="Registro()" class="sign">Registrarme</button> -->
+                        <ul class="alerts">
+                            <% if(typeof errors != 'undefined'){ %> <% errors.forEach(error =>{ %>
+                            <li><%=error.mensaje%></li>
+                            <% }) %> <% } %> 
+                        </ul>
+                    </div>
+                    <div class="login-register">
+                        <p> Ya tienes una cuenta?<a href="http://localhost:3001/usuario/login" class="login-link">Login</a></p>
+                    </div>
+                </div>
+            </form>
+
+            
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+
+</body>
+</html>
