@@ -8,7 +8,7 @@ function Login(){
     })
 }
 function Registro(){
-    fetch('http://localhost:3001//usuario/registro')
+    fetch('http://localhost:3001/usuario/registro')
     .then(info => info.json())
     .then(info =>{
         if(info.err == 'Incorrecto'){
